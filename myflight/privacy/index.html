@@ -19,8 +19,8 @@
     a { color: var(--accent-ink); }
     .wrap { max-width: 760px; margin: 0 auto; padding: 0 24px; }
     header .wrap { display: flex; align-items: center; padding-top: 28px; padding-bottom: 28px; }
-    .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); font-weight: 700; letter-spacing: 0.14em; font-size: 15px; }
-    .brand img { width: 30px; height: 30px; border-radius: 7px; }
+    .brand { display: inline-flex; align-items: center; text-decoration: none; color: var(--ink); }
+    .brand svg { height: 24px; width: auto; display: block; }
     .label { margin: 32px 0 8px; font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
     h1 { margin: 0 0 6px; font-size: clamp(30px, 6vw, 44px); line-height: 1.1; letter-spacing: -0.02em; }
     .date { margin: 0 0 28px; color: var(--muted); }
@@ -35,7 +35,14 @@
 </head>
 <body>
   <header>
-    <div class="wrap"><a class="brand" href="/"><img src="/assets/mark.png" alt="">MILIVON</a></div>
+    <div class="wrap">
+      <a class="brand" href="/" aria-label="MILIVON home">
+        <svg viewBox="0 0 193 40" role="img" aria-label="MILIVON">
+          <g><path d="M7 0l13 19v12.5L7 12.5z" fill="#B8730C"/><path d="M33 0L20 19v12.5L33 12.5z" fill="#F5B847"/><path d="M0 0h7v40H0zM33 0h7v40h-7z" fill="#EFA21E"/></g>
+          <g transform="translate(58 9) scale(0.55)" fill="currentColor"><path d="M0 40V0h7l13 19L33 0h7v40h-7V12.5L20 31.5 7 12.5V40z"/><path d="M50 0h7v40h-7z"/><path d="M67 0h7v33h21v7H67z"/><path d="M102 0h7v40h-7z"/><path d="M117 0h7.48L136 30.7 147.52 0H155l-15 40h-8z"/><path fill-rule="evenodd" d="M182 0a20 20 0 1 1 0 40a20 20 0 1 1 0-40zm0 7a13 13 0 1 0 0 26a13 13 0 1 0 0-26z"/><path d="M212 40V0h8l19 26V0h7v40h-5.44L219 10.5V40z"/></g>
+        </svg>
+      </a>
+    </div>
   </header>
   <main class="wrap">
     <p class="label">Row One</p>

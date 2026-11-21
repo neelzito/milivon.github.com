@@ -2,154 +2,369 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - MILIVON</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Privacy Policy · MILIVON</title>
   <meta name="description" content="Privacy Policy for MILIVON Kids Sudoku app - Zero data collection policy.">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  <link rel="canonical" href="https://www.milivon.com/privacy.html">
+  <meta name="theme-color" content="#F3F0E9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121210" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="/assets/brand/milivon-icon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
   <style>
-    html {
-      scroll-behavior: smooth;
+    :root {
+      --paper: #F3F0E9;
+      --paper-2: #ECE8DF;
+      --card: #FBFAF6;
+      --ink: #161513;
+      --ink-2: #3A3833;
+      --muted: #6E6A62;
+      --line: #DDD8CD;
+      --line-soft: #E7E3DA;
+      --amber: #EFA21E;
+      --amber-deep: #B8730C;
+      --amber-text: #9A5F07;
+      --on-amber: #2B1C02;
+      --shadow: 0 1px 2px rgba(22,21,19,.06), 0 8px 24px -8px rgba(22,21,19,.14);
+      --shadow-lg: 0 2px 4px rgba(22,21,19,.05), 0 24px 60px -18px rgba(22,21,19,.28);
+      --radius: 22px;
+      --serif: ui-serif, "New York", "Iowan Old Style", Georgia, serif;
+      --sans: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --display: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --paper: #121210;
+        --paper-2: #181816;
+        --card: #1B1B19;
+        --ink: #F1EEE7;
+        --ink-2: #D2CEC5;
+        --muted: #A19D94;
+        --line: #2E2D2A;
+        --line-soft: #252422;
+        --amber-text: #F2B044;
+        --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px -8px rgba(0,0,0,.5);
+        --shadow-lg: 0 2px 4px rgba(0,0,0,.3), 0 30px 70px -20px rgba(0,0,0,.7);
+      }
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-      color: #333;
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.6 var(--sans);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      overflow-x: hidden;
     }
-    .gradient-text {
-      background: linear-gradient(to right, #7c3aed, #db2777);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+    a { color: inherit; }
+    ::selection { background: var(--amber); color: var(--on-amber); }
+    :focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 6px; }
+
+    .wrap { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 32px; }
+    .narrow { max-width: 784px; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin: 0 0 20px;
+      font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase;
+      color: var(--muted);
     }
-    .gradient-bg {
-      background: linear-gradient(to bottom right, #f5f3ff, #fce7f3, #fff);
+    .eyebrow::before { content: ""; width: 18px; height: 2px; background: var(--amber); border-radius: 2px; }
+    h1, h2, h3 { font-family: var(--display); margin: 0; color: var(--ink); }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      height: 48px; padding: 0 22px;
+      border-radius: 999px; border: 1px solid var(--line);
+      font: 600 15px/1 var(--sans); text-decoration: none; white-space: nowrap;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease, box-shadow .2s ease;
     }
-    .gradient-button {
-      background: linear-gradient(to right, #7c3aed, #db2777);
+    .btn:hover { transform: translateY(-1px); border-color: var(--ink); }
+    .btn-primary { background: var(--ink); color: var(--paper); border-color: var(--ink); box-shadow: var(--shadow); }
+    .btn-primary:hover { box-shadow: var(--shadow-lg); }
+    .btn svg { width: 16px; height: 16px; flex: none; }
+    .btn-sm { height: 40px; padding: 0 16px; font-size: 14px; }
+
+    /* Header */
+    .site-header {
+      position: sticky; top: 0; z-index: 50;
+      background: color-mix(in srgb, var(--paper) 82%, transparent);
+      -webkit-backdrop-filter: saturate(1.6) blur(16px);
+      backdrop-filter: saturate(1.6) blur(16px);
+      border-bottom: 1px solid transparent;
+      transition: border-color .3s ease;
     }
-    .gradient-icon {
-      background: linear-gradient(to bottom right, #7c3aed, #db2777);
+    .site-header.scrolled { border-bottom-color: var(--line-soft); }
+    .site-header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+    .logo { display: inline-flex; align-items: center; text-decoration: none; }
+    .logo svg { height: 26px; width: auto; }
+    .nav { display: flex; align-items: center; gap: 30px; }
+    .nav a { text-decoration: none; font-size: 15px; color: var(--ink-2); transition: color .2s; }
+    .nav a:hover { color: var(--ink); }
+    .nav .btn { color: var(--paper); }
+
+    /* Policy */
+    .policy-hero { position: relative; padding: 72px 0 40px; }
+    .policy-hero::before {
+      content: ""; position: absolute; inset: -120px 0 auto 0; height: 520px; z-index: -1;
+      background: radial-gradient(520px 300px at 70% 30%, color-mix(in srgb, var(--amber) 14%, transparent), transparent 70%);
+      pointer-events: none;
+    }
+    .policy-hero h1 {
+      font-size: clamp(42px, 6.4vw, 72px);
+      line-height: 1; letter-spacing: -0.04em; font-weight: 700;
+    }
+    .policy-hero .for { margin: 18px 0 0; font-size: clamp(18px, 1.6vw, 21px); color: var(--ink-2); }
+    .policy-hero .updated { margin: 10px 0 0; font-size: 14.5px; color: var(--muted); }
+
+    .policy {
+      padding: 16px 48px 48px;
+      background: var(--card);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+    .policy section { padding: 32px 0 0; }
+    .policy section + section { border-top: 1px solid var(--line-soft); margin-top: 32px; }
+    .policy h2 {
+      display: flex; align-items: center; gap: 12px;
+      margin: 0 0 14px;
+      font-family: var(--sans); font-size: 14px; font-weight: 700; letter-spacing: .12em; line-height: 1.4;
+      color: var(--ink);
+    }
+    .policy h2::before { content: ""; flex: none; width: 18px; height: 2px; background: var(--amber); border-radius: 2px; }
+    .policy p { margin: 0 0 14px; color: var(--ink-2); }
+    .policy p:last-child { margin-bottom: 0; }
+    .policy strong { color: var(--ink); font-weight: 650; }
+    .policy ul { margin: 0; padding: 0 0 0 22px; color: var(--ink-2); display: grid; gap: 6px; }
+    .policy ul li::marker { color: var(--amber-deep); }
+    .policy ul.plain { list-style: none; padding: 0; }
+    .policy a {
+      color: var(--amber-text); text-decoration: underline; text-decoration-thickness: 1px;
+      text-underline-offset: 3px; text-decoration-color: color-mix(in srgb, var(--amber-text) 45%, transparent);
+    }
+    .policy a:hover { text-decoration-color: currentColor; }
+    .note {
+      margin: 40px 0 0; padding: 20px 24px;
+      background: color-mix(in srgb, var(--amber) 12%, var(--card));
+      border-left: 3px solid var(--amber);
+      border-radius: 4px 14px 14px 4px;
+    }
+    .note p { margin: 0; color: var(--ink); font-weight: 600; }
+    .back { margin: 40px 0 112px; }
+
+    /* Footer */
+    .site-footer { padding: 64px 0 48px; border-top: 1px solid var(--line-soft); }
+    .footer-grid { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 40px; }
+    .footer-grid .logo svg { height: 24px; }
+    .footer-grid p.blurb { margin: 18px 0 0; color: var(--muted); font-size: 15px; max-width: 32ch; }
+    .footer-grid h4 { margin: 0 0 14px; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+    .footer-grid ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .footer-grid ul a { text-decoration: none; font-size: 15px; color: var(--ink-2); }
+    .footer-grid ul a:hover { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    .legal { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--line-soft); color: var(--muted); font-size: 13.5px; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn { transition: none; }
+    }
+
+    /* Responsive */
+    @media (max-width: 1020px) {
+      .footer-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+    @media (max-width: 760px) {
+      .nav a:not(.btn) { display: none; }
+      .policy { padding: 8px 28px 32px; }
+    }
+    @media (max-width: 560px) {
+      body { font-size: 16px; }
+      .wrap { padding: 0 16px; }
+      .site-header .wrap { height: 64px; }
+      .logo svg { height: 22px; }
+      .policy-hero { padding: 44px 0 28px; }
+      .policy { padding: 4px 20px 28px; border-radius: 18px; }
+      .policy section { padding-top: 26px; }
+      .policy section + section { margin-top: 26px; }
+      .note { padding: 16px 18px; }
+      .back { margin-bottom: 80px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="sticky top-0 z-10 bg-white border-b py-4 px-6">
-    <div class="container mx-auto flex justify-between items-center">
-      <div class="flex items-center space-x-2">
-        <div class="w-8 h-8 gradient-icon rounded-lg flex items-center justify-center">
-          <span class="text-white font-bold text-sm">M</span>
-        </div>
-        <a href="/" class="font-bold text-xl hover:opacity-80 transition-opacity">MILIVON</a>
-      </div>
-      <nav class="hidden md:flex space-x-6">
-        <a href="/#about" class="text-sm font-medium hover:text-purple-600 transition-colors">About</a>
-        <a href="/#services" class="text-sm font-medium hover:text-purple-600 transition-colors">Services</a>
-        <a href="/#contact" class="text-sm font-medium hover:text-purple-600 transition-colors">Contact</a>
+  <!-- Brand geometry, shared with the homepage -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="mark" viewBox="0 0 40 40">
+        <path d="M7 0l13 19v12.5L7 12.5z" fill="#B8730C"/>
+        <path d="M33 0L20 19v12.5L33 12.5z" fill="#F5B847"/>
+        <path d="M0 0h7v40H0zM33 0h7v40h-7z" fill="#EFA21E"/>
+      </symbol>
+      <symbol id="wordmark" viewBox="0 0 246 40">
+        <path d="M0 40V0h7l13 19L33 0h7v40h-7V12.5L20 31.5 7 12.5V40z"/>
+        <path d="M50 0h7v40h-7z"/>
+        <path d="M67 0h7v33h21v7H67z"/>
+        <path d="M102 0h7v40h-7z"/>
+        <path d="M117 0h7.48L136 30.7 147.52 0H155l-15 40h-8z"/>
+        <path fill-rule="evenodd" d="M182 0a20 20 0 1 1 0 40a20 20 0 1 1 0-40zm0 7a13 13 0 1 0 0 26a13 13 0 1 0 0-26z"/>
+        <path d="M212 40V0h8l19 26V0h7v40h-5.44L219 10.5V40z"/>
+      </symbol>
+      <symbol id="i-back" viewBox="0 0 16 16"><path d="M13 8H3M7 4L3 8l4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    </defs>
+  </svg>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="MILIVON home">
+        <svg viewBox="0 0 193 40" role="img" aria-label="MILIVON">
+          <use href="#mark" width="40" height="40"/>
+          <use href="#wordmark" x="58" y="9" width="135.3" height="22" fill="currentColor"/>
+        </svg>
+      </a>
+      <nav class="nav" aria-label="Main">
+        <a href="/#products">Products</a>
+        <a href="/#principles">Principles</a>
+        <a href="/#studio">Studio</a>
+        <a href="/#support">Support</a>
+        <a class="btn btn-primary btn-sm" href="/#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <!-- Privacy Policy Content -->
-  <section class="py-16 md:py-24">
-    <div class="container mx-auto px-6">
-      <div class="max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-          <h1 class="text-4xl md:text-5xl font-bold mb-6 gradient-text">
-            Privacy Policy
-          </h1>
-          <p class="text-lg text-gray-600">
-            For Kids Sudoku App
-          </p>
-        </div>
-
-        <div class="bg-white rounded-lg shadow-lg p-8 md:p-12">
-          <div class="prose prose-lg max-w-none">
-            <p class="text-sm text-gray-500 mb-8">Last Updated: 04 June 2025 </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">CHILDREN'S PRIVACY</h2>
-            <p class="mb-6 text-gray-600">
-              Kids Sudoku is designed specifically for children and complies with the Children's Online Privacy Protection Act (COPPA). We are committed to protecting children's privacy and safety.
-            </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">INFORMATION WE DON'T COLLECT</h2>
-            <p class="mb-4 text-gray-600">We do NOT collect, store, or transmit any personal information from users, including:</p>
-            <ul class="list-disc pl-6 mb-6 text-gray-600 space-y-1">
-              <li>Names, addresses, or contact information</li>
-              <li>Photos, videos, or audio recordings</li>
-              <li>Location data or device identifiers</li>
-              <li>Behavioral data or usage analytics</li>
-              <li>Any other personal information</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">INFORMATION WE DO COLLECT</h2>
-            <p class="mb-6 text-gray-600">
-              <strong>None.</strong> Kids Sudoku works completely offline and stores all game progress locally on your device only.
-            </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">THIRD-PARTY SERVICES</h2>
-            <p class="mb-6 text-gray-600">
-              We do not use any third-party analytics, advertising, or data collection services.
-            </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">DATA SHARING</h2>
-            <p class="mb-6 text-gray-600">
-              Since we don't collect any data, we have nothing to share with third parties.
-            </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">PARENTAL CONTROL</h2>
-            <ul class="list-disc pl-6 mb-6 text-gray-600 space-y-1">
-              <li>No user accounts or registration required</li>
-              <li>No social features or communication capabilities</li>
-              <li>No external links within the game</li>
-              <li>All content is pre-approved and educational</li>
-            </ul>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">CHANGES TO THIS POLICY</h2>
-            <p class="mb-6 text-gray-600">
-              We will notify users of any changes to this privacy policy through app updates.
-            </p>
-
-            <h2 class="text-2xl font-bold mb-4 text-gray-800">CONTACT US</h2>
-            <p class="mb-4 text-gray-600">If you have questions about this privacy policy:</p>
-            <ul class="list-none mb-6 text-gray-600 space-y-1">
-              <li><strong>Email:</strong> <a href="mailto:privacy@milivon.com" class="text-purple-600 hover:text-purple-800">privacy@milivon.com</a></li>
-              <li><strong>Website:</strong> <a href="https://www.milivon.com/privacy" class="text-purple-600 hover:text-purple-800">www.milivon.com/privacy</a></li>
-            </ul>
-
-            <div class="bg-purple-50 border-l-4 border-purple-400 p-4 rounded">
-              <p class="text-purple-800 font-medium">
-                This app is designed to be completely safe for children with zero data collection.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-center mt-12">
-          <a 
-            href="/" 
-            class="inline-flex items-center px-6 py-3 text-white font-medium gradient-button rounded-lg hover:opacity-90 transition-opacity"
-          >
-            ← Back to Home
-          </a>
-        </div>
+  <main>
+    <div class="policy-hero">
+      <div class="wrap narrow">
+        <p class="eyebrow">Legal</p>
+        <h1>Privacy Policy</h1>
+        <p class="for">For Kids Sudoku App</p>
+        <p class="updated">Last Updated: 04 June 2025</p>
       </div>
     </div>
-  </section>
 
-  <!-- Footer -->
-  <footer class="py-8 bg-gray-50">
-    <div class="container mx-auto px-6">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="flex items-center space-x-2 mb-4 md:mb-0">
-          <div class="w-6 h-6 gradient-icon rounded flex items-center justify-center">
-            <span class="text-white font-bold text-xs">M</span>
-          </div>
-          <span class="font-semibold">MILIVON</span>
+    <div class="wrap narrow">
+      <article class="policy">
+        <section>
+          <h2>CHILDREN'S PRIVACY</h2>
+          <p>Kids Sudoku is designed specifically for children and complies with the Children's Online Privacy Protection Act (COPPA). We are committed to protecting children's privacy and safety.</p>
+        </section>
+
+        <section>
+          <h2>INFORMATION WE DON'T COLLECT</h2>
+          <p>We do NOT collect, store, or transmit any personal information from users, including:</p>
+          <ul>
+            <li>Names, addresses, or contact information</li>
+            <li>Photos, videos, or audio recordings</li>
+            <li>Location data or device identifiers</li>
+            <li>Behavioral data or usage analytics</li>
+            <li>Any other personal information</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>INFORMATION WE DO COLLECT</h2>
+          <p><strong>None.</strong> Kids Sudoku works completely offline and stores all game progress locally on your device only.</p>
+        </section>
+
+        <section>
+          <h2>THIRD-PARTY SERVICES</h2>
+          <p>We do not use any third-party analytics, advertising, or data collection services.</p>
+        </section>
+
+        <section>
+          <h2>DATA SHARING</h2>
+          <p>Since we don't collect any data, we have nothing to share with third parties.</p>
+        </section>
+
+        <section>
+          <h2>PARENTAL CONTROL</h2>
+          <ul>
+            <li>No user accounts or registration required</li>
+            <li>No social features or communication capabilities</li>
+            <li>No external links within the game</li>
+            <li>All content is pre-approved and educational</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>CHANGES TO THIS POLICY</h2>
+          <p>We will notify users of any changes to this privacy policy through app updates.</p>
+        </section>
+
+        <section>
+          <h2>CONTACT US</h2>
+          <p>If you have questions about this privacy policy:</p>
+          <ul class="plain">
+            <li><strong>Email:</strong> <a href="mailto:privacy@milivon.com">privacy@milivon.com</a></li>
+            <li><strong>Website:</strong> <a href="https://www.milivon.com/privacy">www.milivon.com/privacy</a></li>
+          </ul>
+        </section>
+
+        <div class="note">
+          <p>This app is designed to be completely safe for children with zero data collection.</p>
         </div>
-        <div class="text-sm text-gray-600">
-          © <script>document.write(new Date().getFullYear())</script> MILIVON. Singapore-registered sole proprietorship. All rights reserved.
+      </article>
+
+      <p class="back"><a class="btn" href="/"><svg aria-hidden="true"><use href="#i-back"/></svg>Back to Home</a></p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div>
+          <a class="logo" href="/" aria-label="MILIVON home">
+            <svg viewBox="0 0 193 40" role="img" aria-label="MILIVON">
+              <use href="#mark" width="40" height="40"/>
+              <use href="#wordmark" x="58" y="9" width="135.3" height="22" fill="currentColor"/>
+            </svg>
+          </a>
+          <p class="blurb">Focused, private apps for iPhone, iPad, Mac and the web. Made in Singapore.</p>
         </div>
+        <div>
+          <h4>Products</h4>
+          <ul>
+            <li><a href="https://www.tyniy.com">Tyniy</a></li>
+            <li><a href="https://apps.apple.com/app/id6746194856">KidsSudoku</a></li>
+            <li><a href="/#row-one">Row One</a></li>
+            <li><a href="https://dogsizecomparison.com">Dog Size Comparison</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/#principles">Principles</a></li>
+            <li><a href="/#studio">Studio</a></li>
+            <li><a href="/#support">Support</a></li>
+            <li><a href="/#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="/privacy.html" aria-current="page">Privacy policy</a></li>
+            <li><a href="/myflight/privacy/">Row One privacy</a></li>
+            <li><a href="https://www.tyniy.com/privacy.html">Tyniy privacy</a></li>
+            <li><a href="https://www.tyniy.com/terms.html">Tyniy terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="legal">
+        <span>© 2026 MILIVON. Registered in Singapore.</span>
+        <span>This site uses no cookies and no tracking.</span>
       </div>
     </div>
   </footer>
+
+  <script>
+    // Header hairline once the page scrolls
+    const header = document.querySelector('.site-header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 8);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  </script>
 </body>
-</html> 
+</html>
