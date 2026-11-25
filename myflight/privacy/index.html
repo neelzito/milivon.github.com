@@ -47,23 +47,25 @@
   <main class="wrap">
     <p class="label">Row One</p>
     <h1>Privacy Policy</h1>
-    <p class="date">Effective 12 November 2026</p>
+    <p class="date">Effective 22 November 2026</p>
     <div class="card">
 <h2>Who we are</h2>
 <p>Row One is published by MILIVON ("we"), a sole proprietorship registered in Singapore. If you have any questions about this policy or your data, write to support@milivon.com.</p>
 <h2>The short version</h2>
-<p>Row One has no accounts, no advertising, no analytics and no tracking. Your flights, notes and goals stay on your iPhone. We don't run servers for the app and don't receive or store your logbook.</p>
+<p>Row One has no accounts, no advertising, no analytics and no tracking. Your flights, notes and goals stay on your iPhone. We run one small server, only to look up live status for flights around their day of travel; it doesn't receive or store your logbook.</p>
 <h2>What's stored on your iPhone</h2>
 <p>Everything you add to Row One is stored in the app on your device: flights (airports, dates, times, flight numbers, seats, cabin class, booking references, aircraft and notes), your goals and your settings. If you connect TripIt, your private feed link is kept in the iPhone's Keychain.</p>
 <p>This data is part of your normal device backups (iCloud Backup or a computer backup, depending on your settings). You can delete individual flights at any time; deleting the app removes all of its data from the device.</p>
 <h2>When Row One connects to the internet</h2>
-<p>The app works offline. It only goes online for the features below, and connects directly from your iPhone to the service named; nothing passes through us:</p>
+<p>The app works offline. It only goes online for the features below. Except for live flight status, it connects directly from your iPhone to the service named:</p>
 <ul>
+<li>Live flight status (delays, gates, cancellations), for your own flights with a flight number, from two days before departure until a few hours after landing: the flight number, the departure date and the two airports are sent to our flight status server, which runs on Cloudflare and asks AeroDataBox. The server keeps each answer for up to a few hours, so travellers on the same flight share one lookup, and stores nothing else. Cloudflare processes your IP address to deliver the request.</li>
 <li>Aircraft photos: an aircraft's registration (for example D-AIXP) is sent to Planespotters.net to find a photo.</li>
 <li>Destination weather: the arrival airport's location and the date are sent to Apple's WeatherKit.</li>
 <li>TripIt import, only if you add your feed link: the link is used to download your trips from TripIt.</li>
 <li>Maps are provided by Apple Maps.</li>
 <li>AeroDataBox flight search, only if you tap "Find the tail on AeroDataBox": the AeroDataBox website opens inside the app, and the flight number is copied to your clipboard so you can paste it there. Row One sends AeroDataBox nothing itself; what you search on its website is covered by AeroDataBox's own privacy policy.</li>
+<li>Flightradar24, only if you tap "Where is my plane now?": its website or app opens with the registration of the aircraft assigned to your flight. Row One sends Flightradar24 nothing itself; what you do there is covered by Flightradar24's own privacy policy.</li>
 </ul>
 <p>Like any internet request, these services see your device's IP address. They handle it under their own privacy policies. We don't send them your name, your logbook or anything that identifies you.</p>
 <h2>Permissions</h2>
